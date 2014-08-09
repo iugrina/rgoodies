@@ -1,4 +1,4 @@
-#' Post hoc analysis for Friedman’s Test
+#' Post-hoc analysis for Friedman's Test
 #'
 #' This function applies Post-hoc analysis version of Friedman's Test.
 #' Note: This function doesn't handle NA's! In case of NA in Y in one of the blocks, then that entire block should be removed.
@@ -7,19 +7,14 @@
 #' Adapted from Tal Galili's version, see: \code{\link{http://www.r-statistics.com/2010/02/post-hoc-analysis-for-friedmans-test-r-code/}}
 #' Original credit for linking online, to the package that performs the post hoc test, goes to 'David Winsemius', see:
 #' \code{\link{http://tolstoy.newcastle.edu.au/R/e8/help/09/10/1416.html}};
-#' @export friedman.test.with.post.hoc
+#' @export friedman.posthoc
 #' @param  formu is a formula of the shape: Y ~ X | block
 #' @param  data is a long data.frame with three columns:    [[ Y (numeric), X (factor), block (factor) ]]
 #'   \code{\link{p.adjust.methods}}.
 #' @return Returns a list consisting of list(Friedman.Test = the.sym.test, PostHoc.Test = The.post.hoc.P.values)
-#' @examples
-#' devAskNewPage(T)
-#' exampleData <- data.frame(ID=1:100, GP1=runif(100), GP2=rexp(100,0.2), GP3=rgamma(100, 3), Plate=factor(sample(1:2,100,replace=T)))
-#' glyco.plot(exampleData)
-#' glyco.plot(exampleData, group='Plate', collapse=FALSE, log=TRUE)
 
 
-friedman.test.with.post.hoc <- function(formu, data, to.print.friedman = T, to.post.hoc.if.signif = T, 
+friedman.posthoc <- function(formu, data, to.print.friedman = T, to.post.hoc.if.signif = T, 
     to.plot.parallel = T, to.plot.boxplot = T, signif.P = 0.05, color.blocks.in.cor.plot = T, 
     jitter.Y.in.cor.plot = F) {
     # Loading needed packages
