@@ -122,6 +122,7 @@ friedman.posthoc <- function(formu, data, to.print.friedman = T, to.post.hoc.if.
                 matplot(as.matrix(spread_(data2, block.name, Y.name)[, -1]), type = "l", 
                   lty = 1, axes = FALSE, ylab = Y.name, xlim = plot.xlim, col = blocks.col, 
                   main = par.cor.plot.text)
+		title(Y.name, outer=TRUE)
                 axis(1, at = X.for.plot, labels = X.names)
                 axis(2)  # plot Y axis
                 print(cbind(data[, Y.name], data[, X.name]))
