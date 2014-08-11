@@ -21,9 +21,10 @@ This function applies Post-hoc analysis version of Friedman's Test.
 Note: This function doesn't handle NA's! In case of NA in Y in one of the blocks, then that entire block should be removed.
 }
 \author{
-Ivo Ugrina;
-Adapted from Tal Galili's version, see: \code{\link{http://www.r-statistics.com/2010/02/post-hoc-analysis-for-friedmans-test-r-code/}}
-Original credit for linking online, to the package that performs the post hoc test, goes to 'David Winsemius', see:
+Ivo Ugrina; \cr
+Adapted from Tal Galili's version, see: \cr
+\code{\link{http://www.r-statistics.com/2010/02/post-hoc-analysis-for-friedmans-test-r-code/}}; \cr
+Original credit for linking online, to the package that performs the post hoc test, goes to 'David Winsemius', see: \cr
 \code{\link{http://tolstoy.newcastle.edu.au/R/e8/help/09/10/1416.html}};
 }
 

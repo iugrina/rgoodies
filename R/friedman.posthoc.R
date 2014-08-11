@@ -3,9 +3,10 @@
 #' This function applies Post-hoc analysis version of Friedman's Test.
 #' Note: This function doesn't handle NA's! In case of NA in Y in one of the blocks, then that entire block should be removed.
 #'
-#' @author Ivo Ugrina;
-#' Adapted from Tal Galili's version, see: \code{\link{http://www.r-statistics.com/2010/02/post-hoc-analysis-for-friedmans-test-r-code/}}
-#' Original credit for linking online, to the package that performs the post hoc test, goes to 'David Winsemius', see:
+#' @author Ivo Ugrina; \cr
+#' Adapted from Tal Galili's version, see: \cr
+#' \code{\link{http://www.r-statistics.com/2010/02/post-hoc-analysis-for-friedmans-test-r-code/}}; \cr
+#' Original credit for linking online, to the package that performs the post hoc test, goes to 'David Winsemius', see: \cr
 #' \code{\link{http://tolstoy.newcastle.edu.au/R/e8/help/09/10/1416.html}};
 #' @export friedman.posthoc
 #' @param  formu is a formula of the shape: Y ~ X | block
@@ -118,7 +119,7 @@ friedman.posthoc <- function(formu, data, to.print.friedman = T, to.post.hoc.if.
                 }
                 
                 # adding a Parallel coordinates plot
-                matplot(as.matrix(spread(data2, Sample, value)[, -1]), type = "l", 
+                matplot(as.matrix(spread_(data2, block.name, Y.name)[, -1]), type = "l", 
                   lty = 1, axes = FALSE, ylab = Y.name, xlim = plot.xlim, col = blocks.col, 
                   main = par.cor.plot.text)
                 axis(1, at = X.for.plot, labels = X.names)
